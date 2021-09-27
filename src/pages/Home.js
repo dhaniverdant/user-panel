@@ -53,7 +53,12 @@ const Home = () => {
                 >
                   Delete
                 </a>
-                <a className="waves-effect waves-light btn-small">Edit</a>
+                <a
+                  className="waves-effect waves-light btn-small"
+                  onClick={() => history.push(`/editUser/${user.id}`)}
+                >
+                  Edit
+                </a>
               </td>
             </tr>
           ))}
