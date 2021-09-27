@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { deleteUser, loadUsers } from '../redux/actions';
 
 const Home = () => {
   let dispatch = useDispatch();
-  const { users } = useSelector(state => state.allUsersData)
+  const { users } = useSelector(state => state.allUsersData);
+  let history = useHistory();
 
   useEffect(() => {
     dispatch(loadUsers());
@@ -19,6 +21,12 @@ const Home = () => {
 
   return (
     <div>
+      <a
+        className="waves-effect waves-light btn-small"
+        onClick={() => history.push("/addUser")}
+      >
+        Add User
+      </a>
       <table className="striped">
         <thead>
           <tr>

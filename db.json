@@ -13,6 +13,13 @@
       "email": "jane@gmail.com",
       "contact": "08832831",
       "id": 3
+    },
+    {
+      "name": "Ossas",
+      "email": "ossas@gmail.com",
+      "contact": "0812344587",
+      "address": "Kongo",
+      "id": 5
     }
   ]
 }
