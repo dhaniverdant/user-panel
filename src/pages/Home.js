@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loadUsers } from '../redux/actions';
+import { deleteUser, loadUsers } from '../redux/actions';
 
 const Home = () => {
   let dispatch = useDispatch();
@@ -9,6 +10,12 @@ const Home = () => {
   useEffect(() => {
     dispatch(loadUsers());
   }, []);
+
+  const handleDelete = (id) => {
+    if (window.confirm("Delete this user?")) {
+      dispatch(deleteUser(id));
+    }
+  };
 
   return (
     <div>
@@ -30,7 +37,16 @@ const Home = () => {
               <td>{user.email}</td>
               <td>{user.contact}</td>
               <td>{user.address}</td>
-              <td></td>
+              <td>
+                <a
+                  className="waves-effect waves-light btn-small"
+                  style={{ marginRight: "5px", backgroundColor: "red" }}
+                  onClick={() => handleDelete(user.id)}
+                >
+                  Delete
+                </a>
+                <a className="waves-effect waves-light btn-small">Edit</a>
+              </td>
             </tr>
           ))}
         </tbody>
