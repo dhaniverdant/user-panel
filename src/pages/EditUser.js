@@ -16,7 +16,6 @@ const EditUser = () => {
   let dispatch = useDispatch();
   let { id } = useParams();
   const { user } = useSelector(state => state.allUsersData);
-  // const { user } = useSelector((userDetail) => userDetail.data);
   const { name, email, contact, address } = userDetail;
 
   const handleInputChange = (e) => {

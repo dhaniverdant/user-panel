@@ -20,7 +20,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div style={{ margin: "30px" }}>
       <a
         className="waves-effect waves-light btn-small"
         onClick={() => history.push("/addUser")}
